@@ -1,0 +1,29 @@
+{
+  "name": "AltW",
+  "version": "1.0.3",
+  "description": "Senior Project with PHP and Mysql Apps",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jirayuch01/altw.git"
+  },
+  "keywords": [
+    "Synonym",
+    "Alternative",
+    "word",
+    "Alternative",
+    "synonym",
+    "Word",
+    "suggestion",
+    "Synonym",
+    "suggestion"
+  ],
+  "author": "[1] Mr. Suphachok Noopan (Project Manager), [2] Mr. Jirayu Chinnawong (Designer), [3] Mr. Borey Sok (Programmer), [4] Dr. Nattapong Tongtep (Project Advisor)",
+  "license": "altw",
+  "bugs": {
+    "url": "https://github.com/jirayuch01/altw/issues"
+  },
+  "homepage": "https://github.com/jirayuch01/altw#readme"
+}
