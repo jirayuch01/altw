@@ -1,0 +1,60 @@
+.dropzone {
+    margin: 0 auto;
+    max-width: 440px;
+    height: 295px;
+    border: 3px dashed #d9d9d9;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-transition: border 0.3s;
+    -moz-transition: border 0.3s;
+    -o-transition: border 0.3s;
+    transition: border 0.3s; }
+
+.dropzone.dz-drag-hover {
+    border-color: #e65028; }
+
+.dz-message {
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
+
+.dropzone.dz-drag-hover .dz-message {
+    opacity: 0.4; }
+
+.dropzone-image svg,
+.dropzone-image img {
+    width: 100%;
+    max-width: 133px;
+    margin-bottom: 1.25em; }
+
+.dropzone-image svg {
+    fill: #e3e3e3; }
+
+.dropzone-text {
+    font-weight: 600;
+    color: #999;
+    margin-bottom: 0.375em; }
+
+.dropzone-text span {
+    display: block;
+    font-size: 0.875em;
+    font-style: italic;
+    font-weight: 500;
+    color: silver; }
+
+.dropzone-upload-btn {
+    font-size: 1em; }
+
+.dropzone.dz-clickable:hover .dropzone-upload-btn,
+.dropzone-upload-btn:focus {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ff6833), to(#ff6029));
+    background-image: -webkit-linear-gradient(top, #ff6833 0%, #ff6029 100%);
+    background-image: -moz-linear-gradient(top, #ff6833 0%, #ff6029 100%);
+    background-image: -o-linear-gradient(top, #ff6833 0%, #ff6029 100%);
+    background-image: linear-gradient(to bottom, #ff6833 0%, #ff6029 100%);
+    border-color: #e65028;
+    color: #fff;
+    text-shadow: 1px 1px 0px #e65028;
+    outline: none; }

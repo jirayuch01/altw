@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600italic,600,400italic,300italic,300);
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block; }
+
+ol, ul {
+    list-style: none; }
+
+a {
+    color: #e65028;
+    text-decoration: none; }
+
+a:hover,
+a:focus {
+    color: #e65028;
+    text-decoration: underline; }
+
+input {
+    line-height: inherit; }
+
+/* Calls to action */
+.cta {
+    padding: 0.6875em 1.625em 0.75em 1.625em;
+    border: 1px solid #c03a16;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #e65028;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.125em;
+    line-height: inherit;
+    text-shadow: 1px 1px 0px #c03a16; }
+
+.cta:hover,
+.cta:focus {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #e65028;
+    background-color: #ff6029;
+    text-shadow: 1px 1px 0px #e65028; }
+
+.cta:active {
+    outline: 0;
+    border: 1px solid #c03a16;
+    background-color: #c03a16;
+    text-shadow: 1px 1px 0px #c03a16; }
+
+.cta.low,
+.cta:disabled {
+    color: #999;
+    text-shadow: none;
+    border-color: #cccccc;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f0f0f0), to(#e0e0e0));
+    background-image: -webkit-linear-gradient(top, #f0f0f0 0%, #e0e0e0 100%);
+    background-image: -moz-linear-gradient(top, #f0f0f0 0%, #e0e0e0 100%);
+    background-image: -o-linear-gradient(top, #f0f0f0 0%, #e0e0e0 100%);
+    background-image: linear-gradient(to bottom, #f0f0f0 0%, #e0e0e0 100%); }

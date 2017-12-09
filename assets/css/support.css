@@ -1,0 +1,123 @@
+/* Formats supported */
+.formats-supported {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.formats-supported-title {
+    text-transform: uppercase;
+    font-size: 0.875em;
+    margin-bottom: 1.125em;
+}
+
+.formats-supported-title:before,
+.formats-supported-title:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.625em;
+    width: 25px;
+    height: 1px;
+    background: #d9d9d9;
+}
+
+.compatibility-software-wrap {
+    display: table;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0.9375em 0;
+}
+
+.compatibility-software {
+    position: relative;
+    display: table-cell;
+    table-layout: fixed;
+}
+
+.compatibility-software svg,
+.compatibility-software img {
+    width: 100%;
+    max-width: 19px;
+    max-height: 19px;
+}
+
+.compatibility-formats-wrap {
+    position: absolute;
+    padding: 0em 0.625em 0.25em 0.625em;
+    background: #363636;
+    border: 1px solid #2e2e2e;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    bottom: -2em;
+    margin-left: 50%;
+    opacity: 0;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+    -webkit-transform: translate(-50%, 15%);
+    -moz-transform: translate(-50%, 15%);
+    -ms-transform: translate(-50%, 15%);
+    -o-transform: translate(-50%, 15%);
+    transform: translate(-50%, 15%);
+}
+
+.compatibility-software:hover .compatibility-formats-wrap {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+.compatibility-formats-wrap:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 6px 8px;
+    border-color: transparent transparent #363636 transparent;
+    top: -6px;
+    left: 50%;
+    margin-left: -8px;
+}
+
+.compatibility-format {
+    display: inline;
+    font-size: 0.75em;
+    color: #fff;
+    margin-left: 0.375em;
+}
+
+.compatibility-formats-wrap .compatibility-format:first-child {
+    margin-left: 0;
+}
+
+
+h3 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; }
+
+
+h3, .h3 {
+    margin-bottom: 0.5em;
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-weight: normal;
+    line-height: 1.125em;
+    color: #999; }
+
+@media screen and (min-width: 640px) {
+    h3, .h3 {
+        margin-bottom: 0.5em;
+        font-size: 18px;
+        font-size: 1.125rem;
+        line-height: 1.125em; }
+}
