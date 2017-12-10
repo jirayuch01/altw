@@ -329,7 +329,7 @@ if ($_POST['submit_1']) {
             });
             $(function () {
                 $("#downloadLink").click(function () {
-                    window.location = "https://docs.google.com/forms/d/1lHiGRgmimU2ss2qawR1yY3TLOzr9z0Sgk4xaIEDivTg";
+                    window.location = "https://docs.google.com/forms/d/e/1FAIpQLSeT0IUUwvw4mgwVUkZmBpcuS1L3a0NoU4Gt_xOVQH2OUm7LFg/viewform";
                 });
             });
             function callback() {
