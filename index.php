@@ -507,7 +507,8 @@ print_r($_SESSION, TRUE);
             $(function () {
                 $("#title, #description").keypress(function (event) {
                     var keyboard = event.which;
-                    if ((keyboard == 32) || (48 <= keyboard && keyboard <= 57) || (65 <= keyboard && keyboard <= 90) || (97 <= keyboard && keyboard <= 122))
+                    //if ((keyboard == 32) || (48 <= keyboard && keyboard <= 57) || (65 <= keyboard && keyboard <= 90) || (97 <= keyboard && keyboard <= 122))
+                    if(32 <= keyboard && keyboard <= 127)
                         return true;
                     $('#alert-keyboard').removeAttr('hidden');
                     return false;
