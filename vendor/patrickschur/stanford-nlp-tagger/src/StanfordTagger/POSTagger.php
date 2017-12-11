@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types = 1);
 
 namespace StanfordTagger;
@@ -11,8 +12,8 @@ use LanguageDetection\Language;
  * @author Patrick Schur <patrick_schur@outlook.de>
  * @package StanfordTagger
  */
-class POSTagger extends StanfordTagger {
-
+class POSTagger extends StanfordTagger
+{
     /**
      * @var Language
      */
@@ -28,7 +29,8 @@ class POSTagger extends StanfordTagger {
      */
     private $separator = '_';
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->lang = new Language(['ar', 'de', 'en', 'es', 'fr', 'zh-Hans', 'zh-Hant']);
     }
 
@@ -36,16 +38,19 @@ class POSTagger extends StanfordTagger {
      * @param string $str
      * @return null|string
      */
-    public function tag(string $str) {
+    public function tag(string $str)
+    {
         $str = trim($str);
 
-        if (empty($str)) {
+        if (empty($str))
+        {
             return null;
         }
 
         $it = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator('.'));
 
-        if (empty($this->getModel())) {
+        if (empty($this->getModel()))
+        {
             $lookupTable = [
                 'ar' => 'arabic.tagger',
                 'de' => 'german-hgc.tagger',
@@ -58,49 +63,56 @@ class POSTagger extends StanfordTagger {
 
             $lang = $this->lang->detect($str)->bestResults()->close();
 
-            if (1 === count($lang)) {
+            if (1 === count($lang))
+            {
                 $lang = $lookupTable[array_keys($lang)[0]];
-            } else {
+            }
+            else
+            {
                 $lang = $lookupTable['en'];
             }
 
             $regex = new \RegexIterator($it, '/^.+\.tagger$/i', \RecursiveRegexIterator::GET_MATCH);
 
-            foreach ($regex as $value) {
-                if (stripos($value[0], $lang) !== false) {
+            foreach ($regex as $value)
+            {
+                if (stripos($value[0], $lang) !== false)
+                {
                     $this->setModel($value[0]);
                     break;
                 }
             }
 
-            if (empty($this->getModel())) {
-                //throw new \RuntimeException('Could not found any models!');
-                echo '<div id="selectedTarget"><div>';
+            if (empty($this->getModel()))
+            {
+                throw new \RuntimeException('Could not found any models!');
             }
         }
 
-        if (empty($this->getJarArchive())) {
+        if (empty($this->getJarArchive()))
+        {
             $regex = new \RegexIterator($it, '/^.+stanford-postagger\.jar$/i', \RecursiveRegexIterator::GET_MATCH);
 
-            foreach ($regex as $value) {
+            foreach ($regex as $value)
+            {
                 $this->setJarArchive($value[0]);
                 break;
             }
 
-            if (empty($this->getJarArchive())) {
-                //throw new \RuntimeException('Could not found any .jar files!');
-                echo '<div id="selectedTarget"><div>';
+            if (empty($this->getJarArchive()))
+            {
+                throw new \RuntimeException('Could not found any .jar files!');
             }
         }
 
         $cmd = escapeshellcmd(
-                $this->getJavaPath()
-                . ' -mx' . $this->getMaxMemoryUsage()
-                . ' -cp "' . $this->getJarArchive() . PATH_SEPARATOR . '" edu.stanford.nlp.tagger.maxent.MaxentTagger'
-                . ' -model ' . $this->getModel()
-                . ' -textFile ' . $this->getTmpFile($str)
-                . ' -outputFormat ' . $this->getOutputFormat()
-                . ' -tagSeparator ' . $this->getSeparator()
+            $this->getJavaPath()
+            . ' -mx' . $this->getMaxMemoryUsage()
+            . ' -cp "' . $this->getJarArchive() . PATH_SEPARATOR . '" edu.stanford.nlp.tagger.maxent.MaxentTagger'
+            . ' -model ' . $this->getModel()
+            . ' -textFile ' . $this->getTmpFile($str)
+            . ' -outputFormat ' . $this->getOutputFormat()
+            . ' -tagSeparator ' . $this->getSeparator()
         );
 
         $descriptorspec = [
@@ -113,7 +125,8 @@ class POSTagger extends StanfordTagger {
 
         $output = null;
 
-        if (is_resource($process)) {
+        if (is_resource($process))
+        {
             fclose($pipes[0]);
 
             $output = stream_get_contents($pipes[1]);
@@ -126,48 +139,29 @@ class POSTagger extends StanfordTagger {
         return trim($output);
     }
 
-    public function setModel(string $model) {
-        if (!file_exists($model)) {
-            //throw new \InvalidArgumentException('Could not found any models!');
-            echo '<div id="selectedTarget"><div>';
+    public function setModel(string $model)
+    {
+        if (!file_exists($model))
+        {
+            throw new \InvalidArgumentException('Could not found any models!');
         }
 
         $this->model = $model;
     }
 
-    public function getModel() {
+    public function getModel()
+    {
         return $this->model;
     }
 
-    public function setSeparator(string $separator) {
+
+    public function setSeparator(string $separator)
+    {
         $this->separator = $separator;
     }
 
-    public function getSeparator() {
+    public function getSeparator()
+    {
         return $this->separator;
     }
-
 }
-?>
-
-<!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en">
-    <!--<![endif]-->
-    <head>
-        <title>Alternative Word Suggestion System for English Writings</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="shortcut icon" type="image/ico" href="assets/icon/favicons.ico">
-        <link rel="apple-touch-icon" href="assets/icon/apple-touch-icon.png">
-        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('#selectedTarget').load('error.php');
-            });
-        </script>   
-    </head>
-</html>

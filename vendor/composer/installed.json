@@ -1,17 +1,17 @@
 [
     {
         "name": "patrickschur/language-detection",
-        "version": "v3.1.0",
-        "version_normalized": "3.1.0.0",
+        "version": "v3.2.0",
+        "version_normalized": "3.2.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/patrickschur/language-detection.git",
-            "reference": "cffbd7b4007728d137111b211deae468340e5bb1"
+            "reference": "c8d54cf095d883dcdd358cffd2d8c2940fd47282"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/patrickschur/language-detection/zipball/cffbd7b4007728d137111b211deae468340e5bb1",
-            "reference": "cffbd7b4007728d137111b211deae468340e5bb1",
+            "url": "https://api.github.com/repos/patrickschur/language-detection/zipball/c8d54cf095d883dcdd358cffd2d8c2940fd47282",
+            "reference": "c8d54cf095d883dcdd358cffd2d8c2940fd47282",
             "shasum": ""
         },
         "require": {
@@ -21,7 +21,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6"
         },
-        "time": "2017-03-14T10:50:20+00:00",
+        "time": "2017-08-19T22:28:43+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -49,24 +49,24 @@
     },
     {
         "name": "patrickschur/stanford-nlp-tagger",
-        "version": "v0.1.1",
-        "version_normalized": "0.1.1.0",
+        "version": "v0.1.2",
+        "version_normalized": "0.1.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/patrickschur/stanford-nlp-tagger.git",
-            "reference": "3040d8c0b47924b536ced1f08818ca2d8372a0c3"
+            "reference": "0d818b809028d141acae0dcc384874890d905b8b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/patrickschur/stanford-nlp-tagger/zipball/3040d8c0b47924b536ced1f08818ca2d8372a0c3",
-            "reference": "3040d8c0b47924b536ced1f08818ca2d8372a0c3",
+            "url": "https://api.github.com/repos/patrickschur/stanford-nlp-tagger/zipball/0d818b809028d141acae0dcc384874890d905b8b",
+            "reference": "0d818b809028d141acae0dcc384874890d905b8b",
             "shasum": ""
         },
         "require": {
             "patrickschur/language-detection": "^3",
             "php": "^7"
         },
-        "time": "2017-02-06T21:04:38+00:00",
+        "time": "2017-08-19T20:10:00+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -95,6 +95,52 @@
             "pos",
             "tagger",
             "wrapper"
+        ]
+    },
+    {
+        "name": "heroku/heroku-buildpack-php",
+        "version": "v127",
+        "version_normalized": "127.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/heroku/heroku-buildpack-php.git",
+            "reference": "4428a20862137d682c9c15434c82a65c20541f97"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/4428a20862137d682c9c15434c82a65c20541f97",
+            "reference": "4428a20862137d682c9c15434c82a65c20541f97",
+            "shasum": ""
+        },
+        "time": "2017-11-30T16:10:52+00:00",
+        "bin": [
+            "bin/heroku-hhvm-apache2",
+            "bin/heroku-hhvm-nginx",
+            "bin/heroku-php-apache2",
+            "bin/heroku-php-nginx"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "David Zuelke",
+                "email": "dz@heroku.com"
+            }
+        ],
+        "description": "Toolkit for starting a PHP application locally, with or without foreman, using the same config for PHP/HHVM and Apache2/Nginx as on Heroku",
+        "homepage": "https://github.com/heroku/heroku-buildpack-php",
+        "keywords": [
+            "apache",
+            "apache2",
+            "foreman",
+            "heroku",
+            "hhvm",
+            "nginx",
+            "php"
         ]
     }
 ]

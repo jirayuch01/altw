@@ -1,0 +1,1 @@
+web: ./vendor/autoload.php web/
