@@ -22,7 +22,7 @@
             ?>
             <br><table width="600" border="1" align="center">
                 <tr>
-                    <td colspan="4" bgcolor="#FFFFFF">
+                    <td colspan="5" bgcolor="#FFFFFF">
                         <strong><div align="center"><h3>Data in mysql</h3></strong></div> 
                     </td>
                 </tr>
