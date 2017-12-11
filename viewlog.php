@@ -27,7 +27,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <th><div align="center">Word</div></th>
+                    <th><div align="center">Before Word</div></th>
+                    <th><div align="center">After Word</div></th>
+                    <th><div align="center">POS</div></th>
                     <th><div align="center">Count</div></th>
                     <th>
                         <div align="center">
