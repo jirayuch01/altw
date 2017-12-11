@@ -42,7 +42,9 @@
                     $i++;
                     ?>
                     <tr>
-                        <td><div align="center"><?php echo $objResult["select_word"]; ?></div></td>
+                        <td><div align="center"><?php echo $objResult["before_word"]; ?></div></td>
+                        <td><div align="center"><?php echo $objResult["after_word"]; ?></div></td>
+                        <td><div align="center"><?php echo $objResult["pos"]; ?></div></td>
                         <td><div align="center"><?php echo $objResult["count_word"]; ?></div></td>
                         <td align="center">
                             <input type="checkbox" name="chkDel[]" id="chkDel<?php echo $i; ?>" 
