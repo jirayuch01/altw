@@ -1,0 +1,5 @@
+{
+    "require": {
+        "patrickschur/stanford-nlp-tagger": "^0.1.1"
+    }
+}

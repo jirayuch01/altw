@@ -47,7 +47,8 @@ $_SESSION['content_resource'] = array();
 $_SESSION['content_pos'] = array();
 $_SESSION['content_modified'] = array();
 
-require './POS/file/vendor/autoload.php';
+//require './POS/file/vendor/autoload.php';
+require './vendor/autoload.php';
 use StanfordTagger\POSTagger;
 $pos = new POSTagger();
 $contentPos = $pos->tag($content);
