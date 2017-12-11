@@ -17,7 +17,7 @@
         <form name="frmMain" action="#" method="POST">
             <?php
             include_once 'config.php';
-            $sql = "SELECT * FROM log ORDER BY count_word DESC";
+            $sql = "SELECT * FROM logs ORDER BY count_word DESC";
             $result = mysqli_query($link, $sql) or die(mysql_error());
             ?>
             <br><table width="600" border="1" align="center">
